@@ -1,6 +1,6 @@
 helmCharts:
-- name: cert-manager
- repo: https://charts.jetstack.io
- version: v1.3.0
- releaseName: my-cert-manager
- namespace: cert-manager
+- name: ghost
+ repo: https://charts.bitnami.com/bitnami
+ version: 15.1.0
+ releaseName: my-ghost
+ namespace: ghost
