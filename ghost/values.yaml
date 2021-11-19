@@ -82,7 +82,7 @@ ghostUsername: user
 ## @param ghostPassword Ghost user password
 ## Defaults to a random 10-character alphanumeric string if not set
 ##
-ghostPassword: ""
+ghostPassword: "secretpass"
 ## @param existingSecret Name of existing secret containing Ghost credentials
 ## NOTE: Must contain key `ghost-password`
 ## NOTE: When it's set, the `ghostPassword` parameter is ignored
@@ -96,7 +96,7 @@ ghostEmail: user@example.com
 ghostBlogTitle: User's Blog
 ## @param ghostHost Ghost host to create application URLs
 ##
-ghostHost: ""
+ghostHost: "34.159.8.27"
 ## @param ghostPath URL sub path where to server the Ghost application
 ##
 ghostPath: /
@@ -373,7 +373,7 @@ service:
   ## @param service.loadBalancerIP Ghost service Load Balancer IP
   ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#type-loadbalancer
   ##
-  loadBalancerIP: ""
+  loadBalancerIP: "34.159.8.27"
   ## @param service.loadBalancerSourceRanges Ghost service Load Balancer sources
   ## ref: https://kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/#restrict-access-for-loadbalancer-service
   ## e.g:
@@ -596,10 +596,10 @@ mariadb:
   ##      https://github.com/bitnami/bitnami-docker-mariadb/blob/master/README.md#creating-a-database-on-first-run
   ##      https://github.com/bitnami/bitnami-docker-mariadb/blob/master/README.md#creating-a-database-user-on-first-run
   auth:
-    rootPassword: ""
+    rootPassword: "secretpass"
     database: bitnami_ghost
     username: bn_ghost
-    password: ""
+    password: "secretpass"
     existingSecret: ""
   ## MariaDB Primary configuration
   ##
