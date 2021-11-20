@@ -75,7 +75,7 @@ spec:
                   name: my-release-ghost
                   key: mariaPass
             - name: GHOST_HOST
-              value: "35.246.185.198"
+              value: "35.246.185.198/"
             - name: GHOST_PORT_NUMBER
               value: "2368"
             - name: GHOST_USERNAME
