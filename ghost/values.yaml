@@ -350,7 +350,7 @@ customReadinessProbe: {}
 service:
   ## @param service.type Ghost service type
   ##
-  type: NodePort
+  type: LoadBalancer
   ## @param service.ports.http Ghost service HTTP port
   ## @param service.ports.https Ghost service HTTPS port
   ##
@@ -363,7 +363,7 @@ service:
   ## NOTE: choose port between <30000-32767>
   ##
   nodePorts:
-    http: "30080"
+    http: ""
     https: ""
   ## @param service.clusterIP Ghost service Cluster IP
   ## e.g.:
@@ -373,7 +373,7 @@ service:
   ## @param service.loadBalancerIP Ghost service Load Balancer IP
   ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#type-loadbalancer
   ##
-  loadBalancerIP: ""
+  loadBalancerIP: "35.246.185.198"
   ## @param service.loadBalancerSourceRanges Ghost service Load Balancer sources
   ## ref: https://kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/#restrict-access-for-loadbalancer-service
   ## e.g:
