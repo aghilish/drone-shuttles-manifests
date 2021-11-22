@@ -123,8 +123,8 @@ spec:
             - name: GHOST_DATABASE_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: {{ template "common.names.fullname" . }}
-                  key: mariaPass
+                  name: credentials
+                  key: mariadb-password
             - name: GHOST_HOST
               value: {{ include "ghost.host" . | quote }}
             - name: GHOST_PORT_NUMBER
@@ -134,8 +134,8 @@ spec:
             - name: GHOST_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: {{ template "common.names.fullname" . }}
-                  key: ghostPass
+                  name: credentials
+                  key: ghost-password
             - name: GHOST_EMAIL
               value: {{ .Values.ghostEmail | quote }}
             - name: GHOST_BLOG_TITLE

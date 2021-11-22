@@ -87,7 +87,7 @@ ghostPassword: ""
 ## NOTE: Must contain key `ghost-password`
 ## NOTE: When it's set, the `ghostPassword` parameter is ignored
 ##
-existingSecret: ""
+existingSecret: "credentials"
 ## @param ghostEmail Ghost user email
 ##
 ghostEmail: user@example.com
@@ -96,7 +96,7 @@ ghostEmail: user@example.com
 ghostBlogTitle: User's Blog
 ## @param ghostHost Ghost host to create application URLs
 ##
-ghostHost: "35.246.185.198"
+ghostHost: ""
 ## @param ghostPath URL sub path where to server the Ghost application
 ##
 ghostPath: /
@@ -123,7 +123,7 @@ smtpService: ""
 smtpExistingSecret: ""
 ## @param allowEmptyPassword Allow the container to be started with blank passwords
 ##
-allowEmptyPassword: true
+allowEmptyPassword: false
 ## @param ghostSkipInstall Skip performing the initial bootstrapping for Ghost
 ##
 ghostSkipInstall: false
@@ -600,7 +600,7 @@ mariadb:
     database: bitnami_ghost
     username: bn_ghost
     password: ""
-    existingSecret: ""
+    existingSecret: "credentials"
   ## MariaDB Primary configuration
   ##
   primary:

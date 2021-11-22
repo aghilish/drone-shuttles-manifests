@@ -66,14 +66,14 @@ spec:
             - name: MARIADB_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: my-release-mariadb
+                  name: credentials
                   key: mariadb-root-password
             - name: MARIADB_USER
               value: "bn_ghost"
             - name: MARIADB_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: my-release-mariadb
+                  name: credentials
                   key: mariadb-password
             - name: MARIADB_DATABASE
               value: "bitnami_ghost"
