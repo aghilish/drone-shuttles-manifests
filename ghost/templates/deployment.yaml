@@ -123,7 +123,7 @@ spec:
             - name: GHOST_DATABASE_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: credentials
+                  name: {{ include "ghost.databaseSecretName" . }}
                   key: mariadb-password
             - name: GHOST_HOST
               value: {{ include "ghost.host" . | quote }}
@@ -134,8 +134,8 @@ spec:
             - name: GHOST_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: credentials
-                  key: ghost-password
+                  name: {{ include "common.secrets.name" (dict "existingSecret" .Values.existingSecret "context" $) }}
+                  key: {{ include "common.secrets.key" (dict "existingSecret" .Values.existingSecret "key" "ghost-password") }}
             - name: GHOST_EMAIL
               value: {{ .Values.ghostEmail | quote }}
             - name: GHOST_BLOG_TITLE

@@ -3,12 +3,12 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: my-release-mariadb
+  name: demo-mariadb
   namespace: ghost
   labels:
     app.kubernetes.io/name: mariadb
     helm.sh/chart: mariadb-9.8.1
-    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/instance: demo
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: primary
 spec:
@@ -17,24 +17,24 @@ spec:
   selector:
     matchLabels: 
       app.kubernetes.io/name: mariadb
-      app.kubernetes.io/instance: my-release
+      app.kubernetes.io/instance: demo
       app.kubernetes.io/component: primary
-  serviceName: my-release-mariadb
+  serviceName: demo-mariadb
   updateStrategy:
     type: RollingUpdate
   template:
     metadata:
       annotations:
-        checksum/configuration: 5d8c3096ddc90ebf510e2eea22483ff59f28efb7afc61096d6990fc9efa9ffa0
+        checksum/configuration: 41bb4ef08e2c11fcea95e7cc018dc70fbb4bb5b767fea42fd9c9a57c5eb03ddf
       labels:
         app.kubernetes.io/name: mariadb
         helm.sh/chart: mariadb-9.8.1
-        app.kubernetes.io/instance: my-release
+        app.kubernetes.io/instance: demo
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/component: primary
     spec:
       
-      serviceAccountName: my-release-mariadb
+      serviceAccountName: demo-mariadb
       affinity:
         podAffinity:
           
@@ -44,7 +44,7 @@ spec:
                 labelSelector:
                   matchLabels:
                     app.kubernetes.io/name: mariadb
-                    app.kubernetes.io/instance: my-release
+                    app.kubernetes.io/instance: demo
                     app.kubernetes.io/component: primary
                 namespaces:
                   - "ghost"
@@ -124,13 +124,13 @@ spec:
       volumes:
         - name: config
           configMap:
-            name: my-release-mariadb
+            name: demo-mariadb
   volumeClaimTemplates:
     - metadata:
         name: data
         labels: 
           app.kubernetes.io/name: mariadb
-          app.kubernetes.io/instance: my-release
+          app.kubernetes.io/instance: demo
           app.kubernetes.io/component: primary
       spec:
         accessModes:

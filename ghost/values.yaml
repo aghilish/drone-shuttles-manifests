@@ -123,7 +123,7 @@ smtpService: ""
 smtpExistingSecret: ""
 ## @param allowEmptyPassword Allow the container to be started with blank passwords
 ##
-allowEmptyPassword: false
+allowEmptyPassword: true
 ## @param ghostSkipInstall Skip performing the initial bootstrapping for Ghost
 ##
 ghostSkipInstall: false

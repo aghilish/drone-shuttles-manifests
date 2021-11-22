@@ -3,19 +3,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-release-ghost
+  name: demo-ghost
   namespace: "ghost"
   labels:
     app.kubernetes.io/name: ghost
     helm.sh/chart: ghost-15.1.0
-    app.kubernetes.io/instance: my-release
+    app.kubernetes.io/instance: demo
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/component: ghost
 spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: ghost
-      app.kubernetes.io/instance: my-release
+      app.kubernetes.io/instance: demo
   replicas: 1
   strategy:
     type: RollingUpdate
@@ -24,7 +24,7 @@ spec:
       labels:
         app.kubernetes.io/name: ghost
         helm.sh/chart: ghost-15.1.0
-        app.kubernetes.io/instance: my-release
+        app.kubernetes.io/instance: demo
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/component: ghost
       annotations:
@@ -39,7 +39,7 @@ spec:
                 labelSelector:
                   matchLabels:
                     app.kubernetes.io/name: ghost
-                    app.kubernetes.io/instance: my-release
+                    app.kubernetes.io/instance: demo
                 namespaces:
                   - "ghost"
                 topologyKey: kubernetes.io/hostname
@@ -49,7 +49,7 @@ spec:
       securityContext:
         fsGroup: 1001
       containers:
-        - name: my-release-ghost
+        - name: demo-ghost
           image: docker.io/bitnami/ghost:4.22.3-debian-10-r0
           imagePullPolicy: "IfNotPresent"
           securityContext:
@@ -59,9 +59,9 @@ spec:
             - name: BITNAMI_DEBUG
               value: "false"
             - name: ALLOW_EMPTY_PASSWORD
-              value: "no"
+              value: "yes"
             - name: GHOST_DATABASE_HOST
-              value: "my-release-mariadb"
+              value: "demo-mariadb"
             - name: GHOST_DATABASE_PORT_NUMBER
               value: "3306"
             - name: GHOST_DATABASE_NAME
@@ -129,4 +129,4 @@ spec:
       volumes:
         - name: ghost-data
           persistentVolumeClaim:
-            claimName: my-release-ghost
+            claimName: demo-ghost
