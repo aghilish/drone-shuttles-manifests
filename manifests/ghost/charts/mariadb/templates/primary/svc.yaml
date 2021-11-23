@@ -15,12 +15,9 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - name: mysql
+    - name: http
       port: 3306
       nodePort: 30036
-      protocol: http
-      targetPort: mysql
-      nodePort: null
   selector: 
     app.kubernetes.io/name: mariadb
     app.kubernetes.io/instance: demo
