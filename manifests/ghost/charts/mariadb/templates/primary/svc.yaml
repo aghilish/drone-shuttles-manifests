@@ -17,7 +17,8 @@ spec:
   externalTrafficPolicy: "Cluster"
   sessionAffinity: None
   ports:
-      port: 3306
+    - name: mysql
+      port: 8080
       targetPort: 3306
   selector: 
     app.kubernetes.io/name: mariadb
