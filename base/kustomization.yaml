@@ -2,5 +2,5 @@ helmCharts:
 - name: ghost
  repo: https://charts.bitnami.com/bitnami
  version: 15.1.0
- releaseName: my-release
+ releaseName: demo
  namespace: ghost

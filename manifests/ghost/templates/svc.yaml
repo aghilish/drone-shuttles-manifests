@@ -14,7 +14,7 @@ metadata:
 spec:
   type: LoadBalancer
   externalTrafficPolicy: "Cluster"
-  loadBalancerIP: 35.246.185.198
+  loadBalancerIP: 34.141.67.21
   sessionAffinity: None
   ports:
     - name: http

@@ -70,7 +70,7 @@ image:
   pullSecrets: []
   ## Enable debug mode
   ##
-  debug: false
+  debug: true
 
 ## @section Ghost Configuration parameters
 ## Ghost settings based on environment variables
@@ -87,7 +87,7 @@ ghostPassword: ""
 ## NOTE: Must contain key `ghost-password`
 ## NOTE: When it's set, the `ghostPassword` parameter is ignored
 ##
-existingSecret: "credentials"
+existingSecret: ""
 ## @param ghostEmail Ghost user email
 ##
 ghostEmail: user@example.com
@@ -96,7 +96,7 @@ ghostEmail: user@example.com
 ghostBlogTitle: User's Blog
 ## @param ghostHost Ghost host to create application URLs
 ##
-ghostHost: ""
+ghostHost: "34.141.67.21"
 ## @param ghostPath URL sub path where to server the Ghost application
 ##
 ghostPath: /
@@ -373,7 +373,7 @@ service:
   ## @param service.loadBalancerIP Ghost service Load Balancer IP
   ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#type-loadbalancer
   ##
-  loadBalancerIP: "35.246.185.198"
+  loadBalancerIP: "34.141.67.21"
   ## @param service.loadBalancerSourceRanges Ghost service Load Balancer sources
   ## ref: https://kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/#restrict-access-for-loadbalancer-service
   ## e.g:
@@ -600,7 +600,7 @@ mariadb:
     database: bitnami_ghost
     username: bn_ghost
     password: ""
-    existingSecret: "credentials"
+    existingSecret: ""
   ## MariaDB Primary configuration
   ##
   primary:
