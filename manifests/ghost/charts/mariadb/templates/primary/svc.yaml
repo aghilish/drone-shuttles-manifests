@@ -18,6 +18,7 @@ spec:
     - name: mysql
       port: 3306
       nodePort: 30036
+      targetPort: mysql
   selector: 
     app.kubernetes.io/name: mariadb
     app.kubernetes.io/instance: demo
