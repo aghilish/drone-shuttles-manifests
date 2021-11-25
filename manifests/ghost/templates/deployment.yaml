@@ -28,7 +28,7 @@ spec:
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/component: ghost
       annotations:
-        checksum/secrets: deaade3e2c5cfb9783b229d9d47af3cf22dddbac4dc9999d2ccfd52544719e2e
+        checksum/secrets: 6bde3d7c5a0a661e6f72b783c26cbc2e763a9a097a66f82f00ac812b8d947456
     spec:
       
       affinity:
