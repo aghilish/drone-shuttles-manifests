@@ -13,13 +13,13 @@ metadata:
     app.kubernetes.io/component: primary
   annotations:
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
     - name: mysql
       port: 3306
       protocol: TCP
       targetPort: mysql
-      nodePort: null
+      nodePort: 3306
   selector: 
     app.kubernetes.io/name: mariadb
     app.kubernetes.io/instance: demo
