@@ -13,10 +13,9 @@ metadata:
     app.kubernetes.io/component: primary
   annotations:
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
     - port: 3306
-      protocol: TCP
       targetPort: 3306
   selector: 
     app.kubernetes.io/name: mariadb
