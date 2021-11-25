@@ -13,14 +13,13 @@ metadata:
     app.kubernetes.io/component: primary
   annotations:
 spec:
-  type: LoadBalancer
-  externalTrafficPolicy: "Cluster"
-  sessionAffinity: None
+  type: ClusterIP
   ports:
-    - name: http
+    - name: mysql
+      port: 3306
       protocol: TCP
-      port: 80
-      targetPort: 3306
+      targetPort: mysql
+      nodePort: null
   selector: 
     app.kubernetes.io/name: mariadb
     app.kubernetes.io/instance: demo

@@ -28,7 +28,7 @@ spec:
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/component: ghost
       annotations:
-        checksum/secrets: 1c200ed34a46df42a3510dcfaf89649b960c3207cb1d37e6d54568c60ffbaaca
+        checksum/secrets: 38ba52153310af260fc8fe1ebf219bdada5cb5812ed81feb1dfa4059eb9c0cd7
     spec:
       
       affinity:
@@ -72,7 +72,7 @@ spec:
             - name: GHOST_DATABASE_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: credentials
+                  name: demo-mariadb
                   key: mariadb-password
             - name: GHOST_HOST
               value: "34.89.241.133/"
@@ -83,7 +83,7 @@ spec:
             - name: GHOST_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: credentials
+                  name: demo-ghost
                   key: ghost-password
             - name: GHOST_EMAIL
               value: "user@example.com"

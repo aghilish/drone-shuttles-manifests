@@ -96,7 +96,7 @@ ghostEmail: user@example.com
 ghostBlogTitle: User's Blog
 ## @param ghostHost Ghost host to create application URLs
 ##
-ghostHost: "34.141.67.21"
+ghostHost: "34.89.241.133"
 ## @param ghostPath URL sub path where to server the Ghost application
 ##
 ghostPath: /
@@ -373,7 +373,7 @@ service:
   ## @param service.loadBalancerIP Ghost service Load Balancer IP
   ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#type-loadbalancer
   ##
-  loadBalancerIP: "34.141.67.21"
+  loadBalancerIP: "34.89.241.133"
   ## @param service.loadBalancerSourceRanges Ghost service Load Balancer sources
   ## ref: https://kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/#restrict-access-for-loadbalancer-service
   ## e.g:
