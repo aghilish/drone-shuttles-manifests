@@ -75,7 +75,7 @@ spec:
                   name: credentials
                   key: mariadb-password
             - name: GHOST_HOST
-              value: "34.141.67.21/"
+              value: "34.89.241.133/"
             - name: GHOST_PORT_NUMBER
               value: "2368"
             - name: GHOST_USERNAME
